@@ -45,7 +45,7 @@ TrenaProjectMM10 <- function(quiet=TRUE)
    footprintDatabaseNames <- NA_character_;
    dataDirectory <- system.file(package="TrenaProjectMM10", "extdata")
    footprintDatabaseHost <- NA_character_;
-   geneInfoTable.path <- NA_character_;
+   geneInfoTable.path <- system.file(package="TrenaProjectMM10", "extdata", "geneInfoTable.RData")
 
    .TrenaProjectMM10(TrenaProject("TrenaProjectMM10",
                                   supportedGenes=geneSets[[1]],

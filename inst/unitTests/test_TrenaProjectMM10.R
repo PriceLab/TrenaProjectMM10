@@ -9,6 +9,7 @@ if(!exists("tProj")) {
 runTests <- function()
 {
    test_constructor()
+   test_geneInfoTable()
    test_supportedGenes()
    test_variants()
    test_footprintDatabases()
@@ -24,6 +25,17 @@ test_constructor <- function()
    checkTrue(all(c("TrenaProjectMM10", "TrenaProject") %in% is(tProj)))
 
 } # test_constructor
+#------------------------------------------------------------------------------------------------------------------------
+test_getTranscriptTable <- function()
+{
+   message(sprintf("--- test_getTranscriptable"))
+
+   tbl.apoh <- getTranscriptsTable(tProj, "Apoh")
+   checkEquals(dim(tbl.apoh), c(1, 12))
+   tbl.all <-  getTranscriptsTable(tProj, all=TRUE)
+   checkTrue(nrow(tbl.all) > 25000)
+
+} # test_getTranscriptTable
 #------------------------------------------------------------------------------------------------------------------------
 test_supportedGenes <- function()
 {
