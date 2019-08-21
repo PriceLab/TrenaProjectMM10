@@ -43,14 +43,9 @@ TrenaProjectMM10 <- function(quiet=TRUE)
       }
 
    footprintDatabaseNames <- NA_character_;
-   expressionDirectory <- system.file(package="TrenaProjectMM10", "extdata", "expression")
-   variantsDirectory <- system.file(package="TrenaProjectMM10", "extdata", "variants")
+   dataDirectory <- system.file(package="TrenaProjectMM10", "extdata")
    footprintDatabaseHost <- NA_character_;
    geneInfoTable.path <- NA_character_;
-   genomicRegionsDirectory <- NA_character_;
-   covariatesFile <- NA_character_;
-
-   stopifnot(file.exists(expressionDirectory))
 
    .TrenaProjectMM10(TrenaProject("TrenaProjectMM10",
                                   supportedGenes=geneSets[[1]],
@@ -59,10 +54,7 @@ TrenaProjectMM10 <- function(quiet=TRUE)
                                   footprintDatabaseHost=footprintDatabaseHost,
                                   footprintDatabaseNames=footprintDatabaseNames,
                                   footprintDatabasePort=5432,
-                                  expressionDirectory=expressionDirectory,
-                                  genomicRegionsDirectory = genomicRegionsDirectory,
-                                  variantsDirectory=variantsDirectory,
-                                  covariatesFile=covariatesFile,
+                                  packageDataDirectory=dataDirectory,
                                   quiet=quiet
                                   ))
 
