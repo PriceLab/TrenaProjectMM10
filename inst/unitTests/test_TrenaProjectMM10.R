@@ -9,7 +9,7 @@ if(!exists("tProj")) {
 runTests <- function()
 {
    test_constructor()
-   test_geneInfoTable()
+   test_getTranscriptTable()
    test_supportedGenes()
    test_variants()
    test_footprintDatabases()
@@ -30,10 +30,15 @@ test_getTranscriptTable <- function()
 {
    message(sprintf("--- test_getTranscriptable"))
 
+   expected.colnames <- c("ensg", "chrom", "start", "end", "tss", "strand", "geneSymbol", "entrez", "appris",
+                          "tsl", "transcript", "type")
    tbl.apoh <- getTranscriptsTable(tProj, "Apoh")
    checkEquals(dim(tbl.apoh), c(1, 12))
+   checkEquals(colnames(tbl.apoh), expected.colnames)
+
    tbl.all <-  getTranscriptsTable(tProj, all=TRUE)
    checkTrue(nrow(tbl.all) > 25000)
+   checkEquals(colnames(tbl.all), expected.colnames)
 
 } # test_getTranscriptTable
 #------------------------------------------------------------------------------------------------------------------------
