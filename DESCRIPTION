@@ -1,7 +1,7 @@
 Package: TrenaProjectMM10
 Title: Template gene expression and variant data
-Date: 2019-09-09
-Version: 1.0.3
+Date: 2020-03-24
+Version: 1.0.4
 Author: Paul Shannon
 Maintainer: Paul Shannon <pshannon@systemsbiology.org>
 Description: TrenaProject support for Mmusculus mm10
@@ -10,4 +10,4 @@ Depends: R (>= 3.5.0), TrenaProject
 License: Apache 2.0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
