@@ -56,7 +56,7 @@ test_variants <- function()
 {
    message(sprintf("--- test_variants"))
 
-   checkEquals(getVariantDatasetNames(tProj), character(0))
+   checkEquals(length(getVariantDatasetNames(tProj)), 0)
 
 } # test_variants
 #------------------------------------------------------------------------------------------------------------------------
