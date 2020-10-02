@@ -2,6 +2,7 @@
 
 export(TrenaProjectMM10)
 exportClasses(TrenaProjectMM10)
+exportMethods(getEnhancers)
 import(TrenaProject)
 import(methods)
 import(org.Mm.eg.db)
